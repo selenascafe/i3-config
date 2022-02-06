@@ -8,7 +8,12 @@ i3 is a [[https://en.wikipedia.org/wiki/Tiling_window_manager][tiling window man
 This configuration was made for the i3-gaps fork, but you can still use it in normal i3 by removing the first 3 lines. It uses the tabbed mode by default and IJKL to move around, based on my Emacs configuration which uses those bindings.
 
 * Installation
-Clone the git repository and move the files to the ~/.config/i3 directory.
+Clone the git repository, move the files to the ~/.config/i3 directory and make the /autostart/ file executable.
+
+#+BEGIN_SRC
+git clone https://selenascafe/i3-config ~/.config/i3
+chmod +x ~/.config/i3/autostart
+#+END_SRC
 
 * Explaining the configuration
 
