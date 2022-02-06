@@ -1,0 +1,4 @@
+#!/bin/sh
+xset r rate 240 40
+setxkbmap -layout latam -option ctrl:swapcaps
+nitrogen --restore
