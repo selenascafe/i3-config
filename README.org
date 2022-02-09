@@ -8,12 +8,7 @@ i3 is a [[https://en.wikipedia.org/wiki/Tiling_window_manager][tiling window man
 This configuration was made for the i3-gaps fork, but you can still use it in normal i3 by removing the first 3 lines. It uses the tabbed mode by default and IJKL to move around, based on my Emacs configuration which uses those bindings.
 
 * Installation
-Clone the git repository, move the files to the ~/.config/i3 directory and make the /autostart/ file executable.
-
-#+BEGIN_SRC
-git clone https://selenascafe/i3-config ~/.config/i3
-chmod +x ~/.config/i3/autostart
-#+END_SRC
+Clone the git repository and move the files to the ~/.config/i3 directory.
 
 * Explaining the configuration
 
@@ -45,7 +40,7 @@ Rofi is used as the application launcher and some more stuff, make sure that the
 - /Super + R/ to browse files
 
 #+BEGIN_SRC ~/.config/i3/config
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
@@ -56,7 +51,7 @@ bindsym $mod+Shift+q kill
 
 bindsym $mod+d exec --no-startup-id rofi -show run # run programs
 bindsym $mod+w exec --no-startup-id rofi -show window -show-icons
-bindsym $mod+r exec --no-startup-id rofi -show file-browser -show-icons
+bindsym $mod+r exec --no-startup-id rofi -show filebrowser -show-icons
 #+END_SRC
 
 ** Window management
@@ -66,7 +61,8 @@ Key bindings to manage your windows. Bindings that use IJKL can also use the arr
 - /Super + H/ makes horizontal splits when opening a new window in split mode
 - /Super + V/ vertical splits in tiling mode
 - /Super + F/ toggles fullscreen mode for the focused window
-- /Super + Space/ changes the focus between tiled and floating windows
+- /Super + Space/ changes a window to floating mode
+- /Super + N/ changes the focus between tiling and floating windows
 - /Super + S/ changes to stacking mode
 - /Super + T/ changes to tabbed mode (default)
 - /Super + E/ changes to split mode
@@ -99,8 +95,8 @@ bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
+bindsym $mod+space floating toggle
+bindsym $mod+n focus mode_toggle
 
 bindsym $mod+Mod1+j resize shrink width 10 px or 10 ppt
 bindsym $mod+Mod1+k resize grow height 10 px or 10 ppt
